@@ -32,5 +32,6 @@
         android:layout_marginTop="16dp"
         android:text="Order"
         android:textAllCaps="true"
+        android:onClick="submitOrder"
         />
 </LinearLayout>
