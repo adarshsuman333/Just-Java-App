@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.text.NumberFormat;
 
 //This app displays an order form to add coffee
@@ -20,14 +22,22 @@ public class MainActivity extends AppCompatActivity {
 
     //This method is called when the order button is clicked
     public void submitOrder(View view){
-        display(quantity);
-        displayPrice(quantity*5);
+        int price = quantity * 5;
+        String priceMessage = "Total : ₹" + price;
+        priceMessage = priceMessage + "\nThank You";
+        displayMessage(priceMessage);
     }
 
     //This method displays the given quantity value on the screen
     private void display(int number){
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText(" " + number);
+    }
+
+    //This method displays the given text on the screen
+    private void displayMessage(String message){
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
     }
 
     //This method displays the given price on the screen
@@ -44,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     //This method is clicked when minus (-) button is clicked
     public void decrement(View view){
-         quantity = quantity - 1;
+        quantity = quantity - 1;
         display(quantity);
     }
 }

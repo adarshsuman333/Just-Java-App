@@ -62,7 +62,8 @@
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="16dp"
         android:text="Price"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:textAllCaps="true" />
 
     <TextView
         android:id="@+id/price_text_view"
